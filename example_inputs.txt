@@ -1,0 +1,122 @@
+Following are given a list of example inputs and their respective outputs.
+You can copy the entire input for each example and paste them into the console/terminal.
+
+
+EXAMPLE 1
+
+$(q0, a, Z) = {(q0, AZ)}
+$(q0, a, A) = {(q0, AA)}
+$(q0, b, A) = {(q0, AB)}
+$(q0, b, A) = {(q1, A)}
+$(q0, #, Z) = {(q1, Z)}
+$(q1, c, A) = {(q1, #)}
+$(q1, d, B) = {(q1, #)}
+$(q1, #, Z) = {(q2, #)}
+$(q1, x, X) = {(q1, #)}
+DONE
+3
+
+
+OUTPUT:
+S --> [q0Zq2]
+[q0Zq2] --> a[q0Aq1][q1Zq2] | #[q1Zq2]
+[q0Aq1] --> a[q0Aq1][q1Aq1] | b[q0Aq1][q1Bq1] | #[q1Aq1]
+[q1Aq1] --> c
+[q1Bq1] --> d
+[q1Zq2] --> #
+[q1Xq1] --> a
+
+
+
+
+-----------------------------------------------------------------------
+
+
+EXAMPLE 2
+
+$(q0, a, Z) = {(q0, AZ)}
+$(q0, a, A) = {(q0, A)}
+$(q0, a, A) = {(q1, #)}
+DONE
+2
+
+
+
+OUTPUT:
+The language is empty!
+There is no input string that will
+make the PDA stack go empty.
+Therefore, no useful CFG productions.
+
+
+
+-----------------------------------------------------------------------
+
+
+EXAMPLE 3
+
+$(q0, #, Z) = {(q1, TZ)}
+$(q1, a, T) = {(q1, TA)}
+$(q1, a, T) = {(q1, #)}
+$(q1, b, A) = {(q1, B)}
+$(q1, b, B) = {(q1, #)}
+$(q1, #, Z) = {(q2, #)}
+DONE
+3
+
+
+OUTPUT:
+S --> [q0Zq2]
+[q0Zq2] --> #[q1Tq1][q1Zq2] 
+[q1Tq1] --> a[q1Tq1][q1Aq1] | a
+[q1Aq1] --> b[q1Bq1]
+[q1Bq1] --> b
+[q1Zq2] --> #
+
+
+
+-----------------------------------------------------------------------
+
+
+EXAMPLE 4
+
+$(q0, a, Z) = {(qa, AZ)}
+$(q0, b, Z) = {(q0, BZ)}
+$(q0, a, A) = {(q0, AA)}
+$(q0, b, A) = {(q0, BA)}
+$(q0, a, B) = {(q0, AB)}
+$(q0, b, B) = {(q0, BB)}
+$(q0, c, Z) = {(q1, Z)}
+$(q0, c, A) = {(q1, A)}
+$(q0, c, B) = {(q1, B)}
+$(q1, a, A) = {(q1, #)}
+$(q1, b, B) = {(q1, #)}
+$(q1, #, Z) = {(q1, #)}
+DONE
+2
+
+OUTPUT:
+S --> [q0Zq0] | [q0Zq1]
+[q0Zq0] --> b[q0Bq0][q0Zq0] 
+[q0Zq1] --> b[q0Bq0][q0Zq1] | b[q0Bq1][q1Zq1] | c[q1Zq1]
+[q0Aq0] --> a[q0Aq0][q0Aq0] | b[q0Bq0][q0Aq0] 
+[q0Aq1] --> a[q0Aq0][q0Aq1] | a[q0Aq1][q1Aq1] | b[q0Bq0][q0Aq1] | b[q0Bq1][q1Aq1] | c[q1Aq1]
+[q0Bq0] --> a[q0Aq0][q0Bq0] | b[q0Bq0][q0Bq0] 
+[q0Bq1] --> a[q0Aq0][q0Bq1] | a[q0Aq1][q1Bq1] | b[q0Bq0][q0Bq1] | b[q0Bq1][q1Bq1]
+[q0Bq1] --> c[q1Bq1]
+[q1Aq1] --> a
+[q1Bq1] --> b
+[q1Zq1] --> #
+
+
+
+$(q0, a, Z) = {(q0, AZ)}
+$(q0, a, A) = {(q0, AA)}
+$(q0, b, A) = {(q0, AB)}
+$(q0, b, A) = {(q1, A)}
+$(q1, a, A) = {(q0, A)}
+$(q0, #, Z) = {(q1, Z)}
+$(q1, c, A) = {(q1, #)}
+$(q1, d, B) = {(q1, #)}
+$(q1, x, X) = {(q1, #)}
+DONE
