@@ -28,6 +28,10 @@ note: it also works with higher c++ std versions. C++17 is the version this proj
 
 * Lastly, the terminal will display the simplified CFG following the procedures described in the report.
 
-## Further Observations & Issues:
+## Further Comments:
 
-* The first limitation described in the project report ("Each PDA transition rule can only push up to two symbols \[k≤2\] on top of the stack at the time") was set because it would lead to an exponentially growing number of productions in order m^k; where m is the total number of states and k is the number 
+* The first limitation described in the project report ("Each PDA transition rule can only push up to two symbols \[k≤2\] on top of the stack at the time") was set because it would lead to an exponentially growing number of productions in order m^k; where m is the total number of states and k is the number symbols pushed on top of the stack at the same time. This limitation can be set higher if necessary, but be wary of its exponential time complexity.
+
+* This project can be improved with a GUI for the input PDA.
+  
+* The code can be updated and cleaned up for better performance.
