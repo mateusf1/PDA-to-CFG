@@ -6,7 +6,7 @@ Computer Science and Engineering
 
 University of South Florida
 
-## File Structure
+## Files Structure
 
 * "PDA to CFG Report - Mateus.pdf": this is the project report providing definitions, explanations of the procedures, simplification, implementations, limitations, and results. Read this first.
 * "PDA ro CFG Presentation - Mateus.pptx": this is the project presentation slides. This contains a summary of the report with visuals for the final presentation.
